@@ -1,0 +1,16 @@
+{
+    "Listeners": [
+        {
+            "ListenerArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:listener/app/web-elb/b24abc614fba467a/7465af8a69dfbd33",
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:loadbalancer/app/web-elb/b24abc614fba467a",
+            "Port": 80,
+            "Protocol": "HTTP",
+            "DefaultActions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:targetgroup/web-target-group/cdcce54669a5b706"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "Rules": [
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:listener-rule/app/web-elb/b24abc614fba467a/7465af8a69dfbd33/ab1a5b26122cd921",
+            "Priority": "1",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/api/*"
+                    ],
+                    "PathPatternConfig": {
+                        "Values": [
+                            "/api/*"
+                        ]
+                    }
+                }
+            ],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:targetgroup/api-target-group/ae66befd5767e745",
+                    "Order": 1
+                }
+            ],
+            "IsDefault": false
+        },
+        {
+            "RuleArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:listener-rule/app/web-elb/b24abc614fba467a/7465af8a69dfbd33/d4b6f07ad3c7d85d",
+            "Priority": "default",
+            "Conditions": [],
+            "Actions": [
+                {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:targetgroup/web-target-group/cdcce54669a5b706"
+                }
+            ],
+            "IsDefault": true
+        }
+    ]
+}

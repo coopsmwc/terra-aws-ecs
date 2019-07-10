@@ -1,0 +1,48 @@
+{
+    "TargetGroups": [
+        {
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:targetgroup/api-target-group/ae66befd5767e745",
+            "TargetGroupName": "api-target-group",
+            "Protocol": "HTTP",
+            "Port": 4001,
+            "VpcId": "vpc-0823dc81ea3931e57",
+            "HealthCheckProtocol": "HTTP",
+            "HealthCheckPort": "traffic-port",
+            "HealthCheckEnabled": true,
+            "HealthCheckIntervalSeconds": 30,
+            "HealthCheckTimeoutSeconds": 5,
+            "HealthyThresholdCount": 5,
+            "UnhealthyThresholdCount": 2,
+            "HealthCheckPath": "/",
+            "Matcher": {
+                "HttpCode": "200"
+            },
+            "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:us-east-2:765932995230:loadbalancer/app/web-elb/b24abc614fba467a"
+            ],
+            "TargetType": "instance"
+        },
+        {
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:765932995230:targetgroup/web-target-group/cdcce54669a5b706",
+            "TargetGroupName": "web-target-group",
+            "Protocol": "HTTP",
+            "Port": 4000,
+            "VpcId": "vpc-0823dc81ea3931e57",
+            "HealthCheckProtocol": "HTTP",
+            "HealthCheckPort": "traffic-port",
+            "HealthCheckEnabled": true,
+            "HealthCheckIntervalSeconds": 30,
+            "HealthCheckTimeoutSeconds": 5,
+            "HealthyThresholdCount": 5,
+            "UnhealthyThresholdCount": 2,
+            "HealthCheckPath": "/",
+            "Matcher": {
+                "HttpCode": "200"
+            },
+            "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:us-east-2:765932995230:loadbalancer/app/web-elb/b24abc614fba467a"
+            ],
+            "TargetType": "instance"
+        }
+    ]
+}
